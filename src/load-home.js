@@ -1,21 +1,27 @@
 "use strict"
 
-function loadHomePage() {
-    const content = document.getElementById("content");
+function createHome() {
+    const home = document.createElement("div");
+    home.classList.add("home");
+
+    home.appendChild(createParagraph("Try our vegan dishes!"));
+    home.appendChild(createParagraph("Established in 4 cities!"));
+    home.appendChild(createParagraph("Order from the comfort of your home!"));
+
+    return home;
 }
 
-function createHeader() {
-    const headerElement = document.createElement(header);
+function createParagraph(text) {
+    const para = document.createElement("p");
+    para.innerText = text;
+
+    return para;
 }
 
-function createQuote() {
-    const quoteElement = document.createElement(div);
+function loadHome() {
+    const main = document.getElementById("main");
+    main.innerText = "";
+    main.appendChild(createHome());
 }
 
-function createGallery() {
-    const galleryElement = document.createElement(div);
-}
-
-function createTestimonial() {
-    const testimonialElement = document.createElement(div)
-}
+export default loadHome;
