@@ -5,7 +5,7 @@ function createMain() {
     main.classList.add("main");
     main.setAttribute("id", "main");
 
-    return main
+    return main;
 }
 
 function initializeWebsite() {
