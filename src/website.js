@@ -1,5 +1,6 @@
 import loadHome from "./load-home";
 import loadMenu from "./load-menu";
+import loadAbout from "./load-about";
 
 function createHeader() {
     const header = document.createElement("header");
@@ -34,12 +35,18 @@ function createNav() {
     btnMenu.addEventListener("click", (e) => {
         if(e.target.classList.contains("active")) return;
         setActiveBtn(btnMenu);
-        loadMenu;
+        loadMenu();
     })
 
     const btnAbout = document.createElement("button");
     btnAbout.classList.add("btn-nav");
     btnAbout.innerText = "About";
+    btnAbout.addEventListener("click", (e) => {
+        if(e.target.classList.contains("active")) return;
+        setActiveBtn(btnAbout);
+        loadAbout();
+    })
+    
     const btnContact = document.createElement("button");
     btnContact.classList.add("btn-nav");
     btnContact.innerText = "Contact";
@@ -79,6 +86,7 @@ function initializeWebsite() {
     content.appendChild(createMain());
 
     loadHome();
+    
 }
 
 export default initializeWebsite;
