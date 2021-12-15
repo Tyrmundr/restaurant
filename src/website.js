@@ -1,6 +1,7 @@
 import loadHome from "./load-home";
 import loadMenu from "./load-menu";
 import loadAbout from "./load-about";
+import loadContact from "./load-contact";
 
 function createHeader() {
     const header = document.createElement("header");
@@ -46,10 +47,15 @@ function createNav() {
         setActiveBtn(btnAbout);
         loadAbout();
     })
-    
+
     const btnContact = document.createElement("button");
     btnContact.classList.add("btn-nav");
     btnContact.innerText = "Contact";
+    btnContact.addEventListener("click", (e) => {
+        if(e.target.classList.contains("active")) return;
+        setActiveBtn(btnContact);
+        loadContact();
+    })
 
     nav.appendChild(btnHome);
     nav.appendChild(btnMenu);
@@ -85,8 +91,7 @@ function initializeWebsite() {
     content.appendChild(createHeader());
     content.appendChild(createMain());
 
-    loadHome();
-    
+    loadHome(); 
 }
 
 export default initializeWebsite;
