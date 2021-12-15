@@ -9,7 +9,7 @@ function createHome() {
     home.appendChild(createParagraph("Call, order online or visit us"))
 
     const homeImage = document.createElement("img");
-    homeImage.src = "chef.jpg";
+    homeImage.src = "images/chef.jpg";
     homeImage.classList.add("main-image");
     homeImage.alt = "Dude vegetabling";
 
