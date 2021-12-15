@@ -68,7 +68,7 @@ function createNav() {
 function setActiveBtn(button) {
     const buttons = document.querySelectorAll(".btn-nav");
 
-    buttons.forEach(button => {
+    buttons.forEach((button) => {
         if(button !== this) {
             button.classList.remove("active");
         }
@@ -85,12 +85,27 @@ function createMain() {
     return main;
 }
 
+function createFooter() {
+    const footer = document.createElement("footer");
+    footer.classList.add("footer");
+
+    const footerText = document.createElement("span");
+    footerText.classList.add("footer-text");
+    footerText.innerText = "Copyright © Tyrmundr 2021";
+
+    footer.appendChild(footerText);
+
+    return footer;
+}
+
 function initializeWebsite() {
     const content = document.getElementById("content");
 
     content.appendChild(createHeader());
     content.appendChild(createMain());
+    content.appendChild(createFooter());
 
+    setActiveBtn(document.querySelector(".btn-nav"));
     loadHome(); 
 }
 

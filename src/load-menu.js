@@ -31,6 +31,7 @@ function createDish(name, ingredients) {
 
 function loadMenu() {
     const main = document.getElementById("main");
+    main.innerText = "";
     main.appendChild(createMenu());
 }
 

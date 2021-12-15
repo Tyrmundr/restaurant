@@ -24,6 +24,7 @@ function createParagraph(text) {
 
 function loadAbout() {
     const main = document.getElementById("main");
+    main.innerText = "";
     main.appendChild(createAbout());
 }
 

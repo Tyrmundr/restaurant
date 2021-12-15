@@ -30,6 +30,7 @@ function createParagraph(text) {
 
 function loadHome() {
     const main = document.getElementById("main");
+    main.innerText = "";
     main.appendChild(createHome());
 }
 

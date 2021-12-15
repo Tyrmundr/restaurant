@@ -40,6 +40,7 @@ function createInstruction(text) {
 
 function loadContact() {
     const main = document.getElementById("main");
+    main.innerText = "";
     main.appendChild(createContact());
 }
 
